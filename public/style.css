@@ -33,7 +33,7 @@ nav a { color:var(--muted); }
 .prose code { padding:.12em .32em; background:#f1f1ee; border-radius:3px; font:.88em ui-monospace,SFMono-Regular,Consolas,monospace; }
 .prose pre { overflow:auto; margin:1.8em 0; padding:22px 24px; background:#f1f1ee !important; border:0; border-radius:8px; font-size:.86rem; line-height:1.65; }
 .prose pre code { padding:0; background:transparent; }
-.prose .katex-display { overflow-x:auto; overflow-y:hidden; }
+.prose .katex-display { overflow-x:auto; padding:.45em .15em; }
 .article-end { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); }
 footer { border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
 .footer-inner { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
