@@ -1,0 +1,52 @@
+---
+import "katex/dist/katex.min.css";
+import config from "../../blog.config.js";
+import { withBase } from "../lib/blog";
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+}
+
+const {
+  title = config.title,
+  description = config.description,
+  type = "website",
+  publishedTime
+} = Astro.props;
+const fullTitle = title === config.title ? title : `${title} · ${config.title}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const links = config.nav.map((item) => ({ ...item, href: withBase(item.href) }));
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={config.title} href={withBase("/rss.xml")} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+    <link rel="stylesheet" href={withBase("/style.css")} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner"><a class="brand" href={withBase("/")}>{config.title}</a><nav>{links.map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
+    </header>
+    <main><slot /></main>
+    <footer>
+      <div class="wrap footer-inner">
+        <p>© {new Date().getFullYear()} {config.author}</p>
+        <div>{config.socials.map((item) => <a href={item.href.startsWith("/") ? withBase(item.href) : item.href}>{item.label}</a>)}</div>
+      </div>
+    </footer>
+  </body>
+</html>

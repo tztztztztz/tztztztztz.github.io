@@ -1,0 +1,7 @@
+---
+import Layout from "../components/Layout.astro";
+import { Content, frontmatter } from "../../content/about.md";
+---
+<Layout title="关于">
+  <article class="article wrap"><header class="article-head"><h1>{frontmatter.title || "关于我"}</h1></header><div class="prose"><Content /></div></article>
+</Layout>

@@ -1,0 +1,41 @@
+:root { color-scheme:light; --text:#222; --muted:#777; --line:#e5e5e5; --link:#1756a9; }
+* { box-sizing:border-box; }
+html { font-size:17px; }
+body { margin:0; color:var(--text); background:#fff; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif; line-height:1.7; }
+a { color:var(--link); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.wrap { width:min(720px,calc(100% - 36px)); margin-inline:auto; }
+.site-header { border-bottom:1px solid var(--line); }
+.header-inner { min-height:64px; display:flex; align-items:center; gap:28px; }
+.brand { margin-right:auto; color:var(--text); font-weight:650; }
+nav { display:flex; gap:22px; font-size:.9rem; }
+nav a { color:var(--muted); }
+.intro { padding:72px 0 46px; border-bottom:1px solid var(--line); }
+.intro h1 { margin:0 0 10px; font-size:2rem; }
+.intro p { margin:0; color:var(--muted); }
+.post-list { padding:18px 0 80px; }
+.post-list article { padding:30px 0; border-bottom:1px solid var(--line); }
+.post-list time,.post-meta { color:var(--muted); font-size:.82rem; }
+.post-list h2 { margin:6px 0; font-size:1.25rem; line-height:1.4; }
+.post-list h2 a { color:var(--text); }
+.post-list p { margin:0; color:var(--muted); }
+.article { padding:64px 0 96px; }
+.article-head { margin-bottom:42px; }
+.article-head h1 { margin:0 0 14px; font-size:2.25rem; line-height:1.3; letter-spacing:-.02em; }
+.lead { margin:0 0 18px; color:var(--muted); font-size:1.05rem; }
+.post-meta { display:flex; gap:18px; }
+.prose { line-height:1.85; }
+.prose h2 { margin:2.2em 0 .7em; font-size:1.55rem; }
+.prose h3 { margin:1.8em 0 .6em; font-size:1.25rem; }
+.prose p,.prose ul,.prose ol { margin:1.1em 0; }
+.prose img { max-width:100%; }
+.prose blockquote { margin:1.5em 0; padding-left:18px; border-left:3px solid var(--line); color:var(--muted); }
+.prose code { padding:.12em .32em; background:#f1f1ee; border-radius:3px; font:.88em ui-monospace,SFMono-Regular,Consolas,monospace; }
+.prose pre { overflow:auto; margin:1.8em 0; padding:22px 24px; background:#f1f1ee !important; border:0; border-radius:8px; font-size:.86rem; line-height:1.65; }
+.prose pre code { padding:0; background:transparent; }
+.prose .katex-display { overflow-x:auto; overflow-y:hidden; }
+.article-end { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+.footer-inner { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.footer-inner div { display:flex; gap:18px; }
+@media (max-width:600px) { html { font-size:16px; } .intro { padding-top:48px; } .article { padding-top:48px; } .article-head h1 { font-size:1.8rem; } .footer-inner { align-items:flex-start; flex-direction:column; justify-content:center; gap:2px; } }

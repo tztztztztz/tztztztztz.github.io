@@ -1,0 +1,14 @@
+---
+import Layout from "../components/Layout.astro";
+import config from "../../blog.config.js";
+import { formatDate, getPosts, withBase } from "../lib/blog";
+const posts = await getPosts();
+---
+<Layout>
+  <section class="intro wrap"><h1>{config.title}</h1><p>{config.description}</p></section>
+  <section class="post-list wrap">
+    {posts.map((post) => (
+      <article><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time><h2><a href={withBase(`/posts/${post.id}/`)}>{post.data.title}</a></h2><p>{post.data.description}</p></article>
+    ))}
+  </section>
+</Layout>
